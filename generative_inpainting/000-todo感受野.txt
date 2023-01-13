@@ -1,0 +1,1 @@
+ python inpaint_ops_c3jpg.py --imageA bnw_butterfly.png --imageB bike128.jpg --imageOut bike_style_out.png

@@ -1,0 +1,7 @@
+img_shapes: [512, 512]
+height: 112  # 56
+width: 112 # 56
+max_delta_height: 48  # origin 32->24
+max_delta_width: 48 # origin 32->24
+vertical_margin: 100  # origin 0 ->50
+horizontal_margin: 60  # origin 0 -> 30

@@ -1,0 +1,1 @@
+python test.py --dataroot ./datasets/portrait_matting/ --name portraits_pix2pix --model pix2pix --direction AtoB

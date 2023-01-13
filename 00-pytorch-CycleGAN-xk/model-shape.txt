@@ -1,0 +1,159 @@
+Connected to pydev debugger (build 191.7479.30)
+----------------- Options ---------------
+               batch_size: 6                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 512                           
+                 dataroot: ./datasets/MAR_pix2pix        
+             dataset_mode: aligned                       
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 50                            
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 512                           
+                    epoch: latest                        
+              epoch_count: 192                           
+                 gan_mode: wgangp                        
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             
+                  isTrain: True                          	[default: None]
+                lambda_L1: 100.0                         
+                load_iter: 0                             	[default: 0]
+                load_size: 512                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: pix2pix                       
+                 n_epochs: 100                           
+           n_epochs_decay: 100                           
+               n_layers_D: 3                             
+                     name: MAR_pix2pix                   
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_256                      
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: batch                         
+              num_threads: 4                             
+                output_nc: 1                             
+                    phase: train                         
+                pool_size: 0                             
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 4                             
+         save_latest_freq: 200                           
+           serial_batches: False                         
+                   suffix:                               
+         update_html_freq: 10                            
+                  verbose: False                         
+----------------- End -------------------
+dataset [AlignedDataset] was created
+debug0
+The number of training images = 20010
+initialize network with normal
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 256, 256]           1,024
+         LeakyReLU-2         [-1, 64, 256, 256]               0
+            Conv2d-3        [-1, 128, 128, 128]         131,072
+       BatchNorm2d-4        [-1, 128, 128, 128]             256
+         LeakyReLU-5        [-1, 128, 128, 128]               0
+            Conv2d-6          [-1, 256, 64, 64]         524,288
+       BatchNorm2d-7          [-1, 256, 64, 64]             512
+         LeakyReLU-8          [-1, 256, 64, 64]               0
+            Conv2d-9          [-1, 512, 32, 32]       2,097,152
+      BatchNorm2d-10          [-1, 512, 32, 32]           1,024
+        LeakyReLU-11          [-1, 512, 32, 32]               0
+           Conv2d-12          [-1, 512, 16, 16]       4,194,304
+      BatchNorm2d-13          [-1, 512, 16, 16]           1,024
+        LeakyReLU-14          [-1, 512, 16, 16]               0
+           Conv2d-15            [-1, 512, 8, 8]       4,194,304
+      BatchNorm2d-16            [-1, 512, 8, 8]           1,024
+        LeakyReLU-17            [-1, 512, 8, 8]               0
+           Conv2d-18            [-1, 512, 4, 4]       4,194,304
+      BatchNorm2d-19            [-1, 512, 4, 4]           1,024
+        LeakyReLU-20            [-1, 512, 4, 4]               0
+           Conv2d-21            [-1, 512, 2, 2]       4,194,304
+             ReLU-22            [-1, 512, 2, 2]               0
+  ConvTranspose2d-23            [-1, 512, 4, 4]       4,194,304
+      BatchNorm2d-24            [-1, 512, 4, 4]           1,024
+UnetSkipConnectionBlock-25           [-1, 1024, 4, 4]               0
+             ReLU-26           [-1, 1024, 4, 4]               0
+  ConvTranspose2d-27            [-1, 512, 8, 8]       8,388,608
+      BatchNorm2d-28            [-1, 512, 8, 8]           1,024
+          Dropout-29            [-1, 512, 8, 8]               0
+UnetSkipConnectionBlock-30           [-1, 1024, 8, 8]               0
+             ReLU-31           [-1, 1024, 8, 8]               0
+  ConvTranspose2d-32          [-1, 512, 16, 16]       8,388,608
+      BatchNorm2d-33          [-1, 512, 16, 16]           1,024
+          Dropout-34          [-1, 512, 16, 16]               0
+UnetSkipConnectionBlock-35         [-1, 1024, 16, 16]               0
+             ReLU-36         [-1, 1024, 16, 16]               0
+  ConvTranspose2d-37          [-1, 512, 32, 32]       8,388,608
+      BatchNorm2d-38          [-1, 512, 32, 32]           1,024
+          Dropout-39          [-1, 512, 32, 32]               0
+UnetSkipConnectionBlock-40         [-1, 1024, 32, 32]               0
+             ReLU-41         [-1, 1024, 32, 32]               0
+  ConvTranspose2d-42          [-1, 256, 64, 64]       4,194,304
+      BatchNorm2d-43          [-1, 256, 64, 64]             512
+UnetSkipConnectionBlock-44          [-1, 512, 64, 64]               0
+             ReLU-45          [-1, 512, 64, 64]               0
+  ConvTranspose2d-46        [-1, 128, 128, 128]       1,048,576
+      BatchNorm2d-47        [-1, 128, 128, 128]             256
+UnetSkipConnectionBlock-48        [-1, 256, 128, 128]               0
+             ReLU-49        [-1, 256, 128, 128]               0
+  ConvTranspose2d-50         [-1, 64, 256, 256]         262,144
+      BatchNorm2d-51         [-1, 64, 256, 256]             128
+UnetSkipConnectionBlock-52        [-1, 128, 256, 256]               0
+             ReLU-53        [-1, 128, 256, 256]               0
+  ConvTranspose2d-54          [-1, 1, 512, 512]           2,049
+             Tanh-55          [-1, 1, 512, 512]               0
+UnetSkipConnectionBlock-56          [-1, 1, 512, 512]               0
+    UnetGenerator-57          [-1, 1, 512, 512]               0
+================================================================
+Total params: 54,407,809
+Trainable params: 54,407,809
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 1.00
+Forward/backward pass size (MB): 533.09
+Params size (MB): 207.55
+Estimated Total Size (MB): 741.64
+----------------------------------------------------------------
+initialize network with normal
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 256, 256]           2,112
+         LeakyReLU-2         [-1, 64, 256, 256]               0
+            Conv2d-3        [-1, 128, 128, 128]         131,072
+       BatchNorm2d-4        [-1, 128, 128, 128]             256
+         LeakyReLU-5        [-1, 128, 128, 128]               0
+            Conv2d-6          [-1, 256, 64, 64]         524,288
+       BatchNorm2d-7          [-1, 256, 64, 64]             512
+         LeakyReLU-8          [-1, 256, 64, 64]               0
+            Conv2d-9          [-1, 512, 63, 63]       2,097,152
+      BatchNorm2d-10          [-1, 512, 63, 63]           1,024
+        LeakyReLU-11          [-1, 512, 63, 63]               0
+           Conv2d-12            [-1, 1, 62, 62]           8,193
+NLayerDiscriminator-13            [-1, 1, 62, 62]               0
+================================================================
+Total params: 2,764,609
+Trainable params: 2,764,609
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 2.00
+Forward/backward pass size (MB): 182.57
+Params size (MB): 10.55
+Estimated Total Size (MB): 195.12
